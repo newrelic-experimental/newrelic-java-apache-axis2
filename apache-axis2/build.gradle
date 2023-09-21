@@ -8,7 +8,7 @@ dependencies {
 implementation 'org.apache.axis2:axis2-kernel:1.4.1'
 
 
-   // New Relic Java Agent dependencies
+   // New Relic Labs Java Agent dependencies
    implementation 'com.newrelic.agent.java:newrelic-agent:6.4.0'
    implementation 'com.newrelic.agent.java:newrelic-api:6.4.0'
    implementation fileTree(include: ['*.jar'], dir: '../libs')
@@ -17,9 +17,9 @@ implementation 'org.apache.axis2:axis2-kernel:1.4.1'
 
 jar {
   manifest {
-    attributes 'Implementation-Title': 'com.newrelic.instrumentation.apache-axis2'
-    attributes 'Implementation-Vendor': 'New Relic'
-    attributes 'Implementation-Vendor-Id': 'com.newrelic'
+    attributes 'Implementation-Title': 'com.newrelic.instrumentation.labs.apache-axis2'
+    attributes 'Implementation-Vendor': 'New Relic Labs'
+    attributes 'Implementation-Vendor-Id': 'com.newrelic.labs'
     attributes 'Implementation-Version': 1.0
   }
 }
