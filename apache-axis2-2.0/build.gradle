@@ -1,0 +1,31 @@
+
+// Build.gradle generated for instrumentation module apache-axis2
+
+apply plugin: 'java'
+
+dependencies {
+	implementation 'org.apache.axis2:axis2-kernel:2.0.0'
+	implementation 'org.apache.axis2:axis2-transport-http:2.0.0'
+	implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+
+   // New Relic Labs Java Agent dependencies
+   implementation 'com.newrelic.agent.java:newrelic-agent:6.4.0'
+   implementation 'com.newrelic.agent.java:newrelic-api:6.4.0'
+   implementation fileTree(include: ['*.jar'], dir: '../libs')
+   implementation fileTree(include: ['*.jar'], dir: '../test-lib')
+}
+
+jar {
+  manifest {
+    attributes 'Implementation-Title': 'com.newrelic.instrumentation.labs.apache-axis2'
+    attributes 'Implementation-Vendor': 'New Relic Labs'
+    attributes 'Implementation-Vendor-Id': 'com.newrelic.labs'
+    attributes 'Implementation-Version': 1.0
+  }
+}
+
+verifyInstrumentation {
+   passes ('org.apache.axis2:axis2-transport-http:[2.0.0,)') {
+   	compile( 'jakarta.servlet:jakarta.servlet-api:6.0.0')
+   }
+}
