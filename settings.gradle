@@ -1,2 +1,3 @@
 rootProject.name = 'java-instrumentation-template'
 include 'apache-axis2'
+include 'apache-axis2-2.0'
