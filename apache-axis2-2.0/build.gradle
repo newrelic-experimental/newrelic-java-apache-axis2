@@ -3,6 +3,11 @@
 
 apply plugin: 'java'
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
 dependencies {
 	implementation 'org.apache.axis2:axis2-kernel:2.0.0'
 	implementation 'org.apache.axis2:axis2-transport-http:2.0.0'
